@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>iStore – iPhone Shop</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">&#63743; iStore</div>
+    <nav>
+      <a href="#products">Products</a>
+      <a href="#features">Features</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="cart-btn" onclick="toggleCart()">
+      🛒 Cart <span class="cart-count" id="cartCount">0</span>
+    </button>
+  </header>
+
+  <!-- Hero -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>The Future<br>In Your Hand.</h1>
+      <p>Explore the latest iPhone lineup — crafted for performance, beauty, and you.</p>
+      <a href="#products" class="btn-primary">Shop Now</a>
+    </div>
+    <div class="hero-image">📱</div>
+  </section>
+
+  <!-- Products -->
+  <section class="products" id="products">
+    <h2>Our iPhones</h2>
+    <p class="section-sub">Choose the model that fits your life.</p>
+    <div class="product-grid" id="productGrid"></div>
+  </section>
+
+  <!-- Features -->
+  <section class="features" id="features">
+    <h2>Why iStore?</h2>
+    <div class="features-grid">
+      <div class="feature-card">
+        <div class="feature-icon">🚚</div>
+        <h3>Free Shipping</h3>
+        <p>Free delivery on all orders over $999.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">🔒</div>
+        <h3>Secure Payment</h3>
+        <p>Shop with confidence using encrypted checkout.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">↩️</div>
+        <h3>Easy Returns</h3>
+        <p>14-day hassle-free return policy.</p>
+      </div>
+      <div class="feature-card">
+        <div class="feature-icon">💬</div>
+        <h3>24/7 Support</h3>
+        <p>Our team is always here to help you.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact -->
+  <section class="contact" id="contact">
+    <h2>Get in Touch</h2>
+    <form class="contact-form" onsubmit="submitForm(event)">
+      <input type="text" placeholder="Your Name" required />
+      <input type="email" placeholder="Your Email" required />
+      <textarea placeholder="Your Message" rows="4" required></textarea>
+      <button type="submit" class="btn-primary">Send Message</button>
+    </form>
+    <p class="form-success" id="formSuccess">✅ Message sent! We'll get back to you soon.</p>
+  </section>
+
+  <!-- Footer -->
+  <footer class="footer">
+    <p>© 2026 iStore. All rights reserved. | <a href="#">Privacy Policy</a></p>
+  </footer>
+
+  <!-- Cart Sidebar -->
+  <div class="cart-overlay" id="cartOverlay" onclick="toggleCart()"></div>
+  <div class="cart-sidebar" id="cartSidebar">
+    <div class="cart-header">
+      <h3>Your Cart</h3>
+      <button onclick="toggleCart()">✕</button>
+    </div>
+    <div class="cart-items" id="cartItems">
+      <p class="cart-empty">Your cart is empty.</p>
+    </div>
+    <div class="cart-footer" id="cartFooter" style="display:none">
+      <div class="cart-total">Total: $<span id="cartTotal">0</span></div>
+      <button class="btn-primary" onclick="checkout()">Checkout</button>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
